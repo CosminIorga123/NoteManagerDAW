@@ -1,0 +1,7 @@
+<div class="toolbar">
+  <app-filter (emitSelectedFilter)="receiveCategory($event)"></app-filter>
+  <app-tools></app-tools>
+</div>
+<div class="home-container">
+  <app-note [selectedCategoryId]="categoryId"></app-note>
+</div>

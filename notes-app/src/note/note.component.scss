@@ -1,0 +1,23 @@
+.notes-wrapper{
+   display:flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 8px;
+
+   .note{
+      min-height: 150px;
+      min-width: 200px;
+   }
+
+   .buttons-wrapper{
+      display: flex;
+      justify-content: space-between;
+
+      button{
+         background-color: skyblue;
+         width: 80px;
+      }
+   }
+}
+

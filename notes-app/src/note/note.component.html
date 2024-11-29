@@ -1,0 +1,19 @@
+<div class="notes-wrapper">
+    <div *ngFor="let note of notes">
+        <mat-card class="note" >
+            <mat-card-header>
+                <mat-card-title>{{note.title}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{note.description}}</p>
+            </mat-card-content>
+            <mat-card-content>
+                <p>Category: {{getCategoryName(note.categoryId)}}</p>
+            </mat-card-content>
+            <mat-card-actions class="buttons-wrapper">
+                <button mat-flat-button (click)="editNote(note)">Edit</button>
+                <button mat-flat-button (click)="deleteNote(note.id)">Delete</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="add-note-container">
+  <h3>{{noteId ? 'Edit note' : 'Add a note'}}</h3>
+  <form class="add-note-form">
+    <mat-form-field>
+      <input matInput [(ngModel)]="noteTitle" name="inputNoteTitle" placeholder="Name" required/>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput [(ngModel)]="noteDescription" name="inputNoteDescription" placeholder="Description"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <mat-select *ngIf="categories" [(ngModel)]="idCategoryNote" name="categ">
+        <mat-option *ngFor="let categ of categories" [value]="categ.id">{{categ.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button *ngIf="!noteId" class="button" mat-raised-button (click)="addNote()">ADD</button>
+    <button *ngIf="noteId" class="button" mat-raised-button (click)="updateNote()">UPDATE</button>
+    <button class="button" mat-raised-button [routerLink]="['']" routerLinkActive="router-link-active">BACK</button>
+    <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
+  </form>
+</div>
